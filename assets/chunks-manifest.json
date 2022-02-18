@@ -1,0 +1,10 @@
+{
+  "index": {
+    "js": [
+      "assets/js/runtime.js",
+      "assets/js/vendor.js",
+      "assets/js/index.js"
+    ],
+    "css": []
+  }
+}

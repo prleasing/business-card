@@ -1,0 +1,9 @@
+{
+  "./index.html": "./index.html",
+  "assets/images/check.svg": "assets/images/check-ba461980a2dab56eadf7a2c49e2432ad.svg",
+  "assets/images/logo.svg": "assets/images/logo-3fda612a5dcc621924444239fc99f59e.svg",
+  "index.js": "assets/js/index.js",
+  "robots.txt": "robots.txt",
+  "runtime.js": "assets/js/runtime.js",
+  "vendor.js": "assets/js/vendor.js"
+}
