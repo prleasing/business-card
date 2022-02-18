@@ -263,6 +263,9 @@ exports.commonConfig = {
 			'@store': path.resolve(__dirname, '../src/js/store'),
 			'@pages': path.resolve(__dirname, '../src/js/pages'),
 			'@templates': path.resolve(__dirname, '../src/templates')
+		},
+		fallback: {
+			fs: false
 		}
 	},
 	optimization: {

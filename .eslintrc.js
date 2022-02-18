@@ -1,6 +1,7 @@
 module.exports = {
 	extends: ['@taknepoidet-config/eslint-config'],
 	rules: {
+		'vuejs-accessibility/label-has-for': 0,
 		'import/extensions': [
 			'error',
 			'always',
