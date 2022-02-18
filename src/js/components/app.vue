@@ -11,6 +11,9 @@
 							placeholder="Фамилия"
 							:name="`business-card-firstname`"
 							:autocomplete="`business-card-firstname`"
+							:class="{
+								'no-print': fio.firstname.length < 1
+							}"
 						/>
 						<input
 							v-model="fio.name"
@@ -18,6 +21,9 @@
 							placeholder="Имя"
 							:name="`business-card-name`"
 							:autocomplete="`business-card-name`"
+							:class="{
+								'no-print': fio.name.length < 1
+							}"
 						/>
 						<input
 							v-model="fio.middleName"
@@ -25,6 +31,9 @@
 							placeholder="Отчество"
 							:name="`business-card-middle-name`"
 							:autocomplete="`business-card-middle-name`"
+							:class="{
+								'no-print': fio.middleName.length < 1
+							}"
 						/>
 					</div>
 					<label for="business-card-post">
@@ -32,6 +41,9 @@
 						<textarea
 							id="business-card-post"
 							v-model="post"
+							:class="{
+								'no-print': post.length < 1
+							}"
 							:name="`business-card-post`"
 							:autocomplete="`business-card-post`"
 							required

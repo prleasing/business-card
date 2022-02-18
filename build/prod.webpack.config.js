@@ -11,6 +11,7 @@ const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
 module.exports = merge(commonConfig, {
 	mode: 'production',
 	output: {
+		publicPath: '/business-card/',
 		filename: 'js/[name]-[contenthash].js'
 	},
 	module: {
