@@ -1,9 +1,16 @@
 {
   "./index.html": "./index.html",
+  "./index.html.gz": "./index.html.gz",
   "assets/images/check.svg": "assets/images/check-ba461980a2dab56eadf7a2c49e2432ad.svg",
-  "assets/images/logo.svg": "assets/images/logo-3fda612a5dcc621924444239fc99f59e.svg",
-  "index.js": "assets/js/index.js",
+  "assets/images/logo-9cfe004d6dfc5c2aa6a078050f03f488.svg.gz": "assets/images/logo-9cfe004d6dfc5c2aa6a078050f03f488.svg.gz",
+  "assets/images/logo.svg": "assets/images/logo-9cfe004d6dfc5c2aa6a078050f03f488.svg",
+  "index.css": "style/index-8acc6baeb09f4b778472.css",
+  "index.js": "js/index-59e5d13b961b407026c2.js",
+  "js/index-59e5d13b961b407026c2.js.gz": "js/index-59e5d13b961b407026c2.js.gz",
+  "js/runtime-4d84b852f4db00194d97.js.gz": "js/runtime-4d84b852f4db00194d97.js.gz",
+  "js/vendor-4c2abbbb5fa896944b54.js.gz": "js/vendor-4c2abbbb5fa896944b54.js.gz",
   "robots.txt": "robots.txt",
-  "runtime.js": "assets/js/runtime.js",
-  "vendor.js": "assets/js/vendor.js"
+  "runtime.js": "js/runtime-4d84b852f4db00194d97.js",
+  "style/index-8acc6baeb09f4b778472.css.gz": "style/index-8acc6baeb09f4b778472.css.gz",
+  "vendor.js": "js/vendor-4c2abbbb5fa896944b54.js"
 }

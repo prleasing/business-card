@@ -1,10 +1,12 @@
 {
   "index": {
     "js": [
-      "assets/js/runtime.js",
-      "assets/js/vendor.js",
-      "assets/js/index.js"
+      "js/runtime-4d84b852f4db00194d97.js",
+      "js/vendor-4c2abbbb5fa896944b54.js",
+      "js/index-59e5d13b961b407026c2.js"
     ],
-    "css": []
+    "css": [
+      "style/index-8acc6baeb09f4b778472.css"
+    ]
   }
 }
