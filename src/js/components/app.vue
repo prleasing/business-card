@@ -136,7 +136,9 @@
 			</div>
 		</div>
 		<div class="card card--back">
-			<div class="qr" v-html="svg"></div>
+			<div class="qr" >
+				<img :src="svg">
+			</div>
 			<div>
 				<h2>Взять в ПР-Лизинг</h2>
 				<div class="leasing-categories">
@@ -324,13 +326,37 @@ export default defineComponent({
 
 		const svg = ref('');
 
+
+		function debounce(f, ms) {
+
+			let isCountdown = false;
+
+			return function() {
+				if (isCountdown) return;
+
+				f.apply(this, arguments);
+
+				isCountdown = true;
+
+				setTimeout(() => isCountdown = false, ms);
+			};
+
+		}
 		async function generateSvg() {
-			svg.value = await QRCode.toString(vCard.value.replace('VERSION:4.0', 'VERSION:3.0'), {
-				type: 'svg'
+			svg.value = await QRCode.toDataURL(vCard.value.replace('VERSION:4.0', 'VERSION:3.0'), {
+				type: String,
+				margin: 0,
+				// width: 1000
 			});
 		}
+
+		const debounceGenerateSvg=  debounce(generateSvg, 2000)
+
+
+
+
 		watch(vCard, () => {
-			generateSvg().then();
+			debounceGenerateSvg()
 		});
 		watch(state.addresses, (items) => {
 			filterAddresses(items);

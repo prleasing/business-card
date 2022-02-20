@@ -220,6 +220,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-items: center;
+	aspect-ratio: 1 / 1;
 }
 
 .card.card--back .qr img {
@@ -410,6 +411,7 @@ input {
 		width: 100%;
 		justify-content: space-between;
 		align-content: space-between;
+		height: 100%;
 	}
 	.card-persona {
 		$self: '.card-persona';
