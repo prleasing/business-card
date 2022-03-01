@@ -1,6 +1,8 @@
 module.exports = {
 	extends: ['@taknepoidet-config/eslint-config'],
 	rules: {
+		'vuejs-accessibility/form-control-has-label': 0,
+		'vue/no-v-html': 0,
 		'vuejs-accessibility/label-has-for': 0,
 		'import/extensions': [
 			'error',
