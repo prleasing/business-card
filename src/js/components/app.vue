@@ -392,11 +392,11 @@ export default defineComponent({
 				});
 
 				return true;
-			} catch (e: Error) {
+			} catch (e: any) {
 				Swal.fire({
 					icon: 'error',
 					text: e.message,
-					// timer: 2000,
+					timer: 2000,
 					timerProgressBar: true,
 					showCloseButton: false,
 					showConfirmButton: false
