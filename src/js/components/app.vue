@@ -204,6 +204,8 @@
 		</div>
 	</form>
 	<button :disabled="!svg" class="print no-print" @click="print">Скачать</button>
+
+	<service-worker />
 </template>
 
 <script lang="ts">
@@ -214,9 +216,10 @@ import { debounce } from '@js/utility';
 import { useVCard } from '@js/hook/v-card';
 import TextFieldAutosize from '@components/textfield-autosize.vue';
 import TextareaAutosize from '@components/textarea-autosize.vue';
+import ServiceWorker from '@components/sw.vue';
 
 export default defineComponent({
-	components: { TextFieldAutosize, TextareaAutosize },
+	components: { ServiceWorker, TextFieldAutosize, TextareaAutosize },
 	setup() {
 		function getInitialValue() {
 			let data = {

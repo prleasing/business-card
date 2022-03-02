@@ -21,7 +21,7 @@ const workboxConfig = {
 				return {
 					...entry,
 					revision: /-(([a-z0-9]{20})|([a-z0-9]{32}))\./.exec(entry.url) ? null : entry.revision,
-					url: `/${entry.url}`
+					url: `/business-card/${entry.url}`
 				};
 			});
 

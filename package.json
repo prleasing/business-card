@@ -111,7 +111,8 @@
 		"sweetalert2": "^11.4.4",
 		"vcard4": "^3.0.1",
 		"vcards-js": "^2.10.0",
-		"vue": "^3.2.31"
+		"vue": "^3.2.31",
+		"workbox-window": "^6.5.0"
 	},
 	"peerDependencies": {
 		"react": "^17.0.2"

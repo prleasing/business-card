@@ -371,4 +371,10 @@ textarea {
 
 .swal2-container {
 	backdrop-filter: blur(2px);
+	button.swal2-confirm {
+		background-color: #5fc02e;
+		&:focus {
+		box-shadow: 0 0 0 3px rgb(5 192 46 / 50%);
+		}
+	}
 }
