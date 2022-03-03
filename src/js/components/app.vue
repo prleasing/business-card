@@ -148,6 +148,12 @@
 				</div>
 			</div>
 		</div>
+		<ul class="no-print footnote">
+			<li>
+				Формат адреса <b>город, улица, дом/корпус, дополнительные данные </b> <br />Пример:
+				<code>г. Уфа, ул. Карла Маркса, 15/2, офис 1</code>
+			</li>
+		</ul>
 		<div class="card card--back">
 			<div class="qr">
 				<img v-if="svg" :src="svg" alt="qr" />
@@ -294,6 +300,7 @@ export default defineComponent({
 				middleName,
 				post: state.post.length > 0 ? state.post : undefined,
 				phones,
+				email: state.email.length > 0 ? state.email : undefined,
 				addresses
 			});
 		});

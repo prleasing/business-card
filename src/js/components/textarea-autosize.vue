@@ -3,7 +3,7 @@
 		v-bind="$attrs"
 		ref="textarea"
 		rows="1"
-		:value="textareaValue"
+		wrap="hard"
 		@input="setValue"
 		@keydown="setValue"
 		v-html="textareaValue"
@@ -28,27 +28,8 @@ export default defineComponent({
 
 		function resize() {
 			if (textarea.value !== undefined) {
-				const { font, width, padding, border, lineHeight } = window.getComputedStyle(textarea.value);
-
-				const fakeTextarea = document.createElement('div');
-
-				const value = textarea.value.value.length < 1 ? ' ' : textarea.value.value;
-
-				fakeTextarea.innerHTML = value.replace(/\n$/g, '\n ').replace(/\n/g, '<br>').replace(/\s/g, '>');
-
-				Object.assign(fakeTextarea.style, {
-					font,
-					width,
-					padding,
-					border,
-					lineHeight
-				});
-				document.body.append(fakeTextarea);
-				const { height } = fakeTextarea.getBoundingClientRect();
-
-				fakeTextarea.remove();
-
-				textarea.value.style.height = `${height}px`;
+				textarea.value.style.height = 'auto';
+				textarea.value.style.height = `${textarea.value.scrollHeight}px`;
 			}
 		}
 		function setValue(event: Event) {
@@ -67,7 +48,6 @@ export default defineComponent({
 				textareaValue.value = props.modelValue;
 			}
 		);
-
 		return { textareaValue, setValue, textarea };
 	}
 });

@@ -57,6 +57,9 @@ export default defineComponent({
 				}
 			}
 		});
+	},
+	render() {
+		return '';
 	}
 });
 </script>

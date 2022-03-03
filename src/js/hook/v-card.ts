@@ -72,6 +72,7 @@ export function useVCard(data: Partial<CardData>) {
 			new TextType(data.email)
 		);
 
+		console.log(email);
 		props.push(email);
 	}
 

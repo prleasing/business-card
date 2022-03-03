@@ -9,9 +9,11 @@ html {
 }
 
 input,
-textarea {
+textarea,
+div[contenteditable='true'] {
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 	background: transparent;
 	border: none;
 	box-shadow: none;
@@ -19,23 +21,37 @@ textarea {
 }
 
 .business-card {
-	display: grid;
-	grid-template-rows: 50mm;
-	gap: 3mm;
-	width: 90mm;
-	margin: 5mm auto;
+	display: flex;
+	flex-direction: column;
+	grid-template-columns: 1fr;
+	gap: 0;
+	align-items: center;
+	justify-content: center;
+	margin: 40px auto;
 	font-family: Manrope, serif;
 	-webkit-print-color-adjust: exact;
-	zoom: 2.5;
 
 	@media print {
+		display: grid;
+		grid-template-rows: 50mm;
 		gap: 0;
+		width: 90mm;
 		margin: 0;
 		zoom: 1;
+
+		.card {
+			zoom: 1;
+		}
 	}
 
 	.card {
-		//display: grid;
+		width: 90mm;
+		height: 50mm;
+		zoom: 2.5;
+
+		@media print {
+			zoom: 1;
+		}
 	}
 }
 
@@ -106,7 +122,8 @@ textarea {
 				transform: scale(0);
 			}
 
-			textarea {
+			textarea,
+			div[contenteditable='true'] {
 				width: 100%;
 				font-weight: 500;
 				font-size: 2.4mm;
@@ -127,13 +144,21 @@ textarea {
 		width: 100%;
 		height: 100%;
 		padding: 3mm;
-		background: #fff url('~@images/card-contacts-gradient.png') no-repeat center left;
+		background: #fff
+			image-set(url('~@images/card-contacts-gradient.png') 1x, url('~@images/card-contacts-gradient@2x.png') 2x)
+			no-repeat center left;
 		background-size: 0.3mm 29mm;
 		border-radius: 2.9994mm;
 		box-shadow: 0 1.1997mm 2.9994mm -0.8998mm rgb(64 62 75 / 8%);
 
-		@media (min-resolution: 2dppx) {
-			background-image: url('~@images/card-contacts-gradient@2x.png');
+		& > div {
+			display: block;
+			width: 100%;
+		}
+
+		textarea,
+		div[contenteditable='true'] {
+			width: 100%;
 		}
 
 		p {
@@ -156,7 +181,8 @@ textarea {
 		}
 
 		input,
-		textarea {
+		textarea,
+		div[contenteditable='true'] {
 			display: block;
 			color: #403e4b;
 			font-weight: 600;
@@ -228,14 +254,15 @@ textarea {
 		position: relative;
 		margin-top: 1.44mm;
 		padding: 2mm;
-		background: #fff url('~@images/leasing-categories-gradient.png') no-repeat center left;
+		background: #fff
+			image-set(
+				url('~@images/leasing-categories-gradient.png') 1x,
+				url('~@images/leasing-categories-gradient@2x.png') 2x
+			)
+			no-repeat center left;
 		background-size: 0.3mm 24mm;
 		border-radius: 2.3995mm;
 		box-shadow: 0 1.1997mm 2.9994mm -0.8998mm rgb(64 62 75 / 8%);
-
-		@media (min-resolution: 2dppx) {
-			background-image: url('~@images/leasing-categories-gradient@2x.png');
-		}
 
 		> ul {
 			display: flex;
@@ -371,10 +398,35 @@ textarea {
 
 .swal2-container {
 	backdrop-filter: blur(2px);
+
 	button.swal2-confirm {
 		background-color: #5fc02e;
+
 		&:focus {
-		box-shadow: 0 0 0 3px rgb(5 192 46 / 50%);
+			box-shadow: 0 0 0 3px rgb(5 192 46 / 50%);
+		}
+	}
+}
+
+.footnote {
+	display: flex;
+	margin: 20px auto;
+	padding: 10px 20px;
+	color: #333;
+	font-size: 20px;
+	list-style: none;
+	background: gold;
+	border-radius: 10px;
+
+	code {
+		padding: 2px 5px;
+		background-color: rgb(255 255 255 / 50%);
+		border-radius: 2px;
+	}
+
+	> li {
+		&::before {
+			content: '*';
 		}
 	}
 }

@@ -5,7 +5,6 @@
 <script lang="ts">
 import { defineComponent, onBeforeUnmount, onMounted, PropType, ref, watch } from 'vue';
 import IMask from 'imask';
-import FontFaceObserver from 'fontfaceobserver';
 
 export default defineComponent({
 	name: 'TextFieldAutosize',
@@ -31,16 +30,13 @@ export default defineComponent({
 
 		async function resize() {
 			if (input.value !== undefined) {
-				const { font, height, padding, border, lineHeight, fontFamily } = window.getComputedStyle(input.value);
+				const { font, height, padding, border, lineHeight } = window.getComputedStyle(input.value);
 
 				const fakeField = document.createElement('div');
 
 				const value = input.value.value.length < 1 ? `${props.placeholder}` : input.value.value;
 
-				fakeField.innerHTML = value.replace(/\s/g, '>');
-
-				await new FontFaceObserver(fontFamily.split(',')[0]).load();
-
+				fakeField.innerHTML = value;
 				Object.assign(fakeField.style, {
 					font,
 					height,
@@ -66,6 +62,12 @@ export default defineComponent({
 				imask.on('accept', () => {
 					resize();
 					emit('update:modelValue', imask?.value);
+				});
+			}
+
+			if (input.value !== undefined) {
+				document.fonts.ready.then(() => {
+					resize();
 				});
 			}
 		});
