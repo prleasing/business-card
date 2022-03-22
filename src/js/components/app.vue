@@ -144,7 +144,7 @@
 					<p><span>pr-liz.ru</span></p>
 					<p><span>8(800) 250-25-31</span></p>
 					<p><span>prleasing/</span> — telegram, youtube,</p>
-					<p>vkontakte, facebook, instagram</p>
+					<p>vkontakte, tenchat</p>
 				</div>
 			</div>
 		</div>
