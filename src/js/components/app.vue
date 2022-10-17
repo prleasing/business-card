@@ -310,6 +310,8 @@ export default defineComponent({
 		async function generateSvg() {
 			const value = vCard.value.replace('VERSION:4.0', 'VERSION:3.0');
 
+
+
 			svg.value = await QRCode.toDataURL(value, {
 				width: 1000,
 				margin: 0,
